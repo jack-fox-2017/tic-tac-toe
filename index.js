@@ -5,10 +5,16 @@ function tictactoeCreate(){
   for(let i=0; i<3; i++){
     let col = [];
     for(let j=0; j<3; j++){
-      if(Math.floor(Math.random() * 2) && x.length > 0) {
+      if(Math.floor(Math.random() * 2) == 0 && x.length > 0) {
         col.push(x.pop());
-      } else {
+      } else if (Math.floor(Math.random() * 2) == 0 && o.length > 0){
         col.push(o.pop());
+      }
+      else if(x.length == 0){
+        col.push(o.pop());
+      }
+      else{
+        col.push(x.pop());
       }
     }
     row.push(col);
